@@ -25,12 +25,11 @@ Do not use this skill for a generic brainstorming request. Use it when there is 
 
 ## Analysis workflow
 
-1. List every source that can fire the same event and the trigger condition for each source.
-2. Check event names, event_id, transaction_id, order_id, value, currency and timing.
-3. Compare browser, server and platform counts for the same time window.
-4. Classify likely duplicates as confirmed, probable or unproven.
-5. Score confidence as high, medium or low based on data quality, sample size and source reliability.
-6. Produce the smallest useful next action, not a broad redesign or system rebuild.
+1. List every source that can fire the same event: GTM tags, plugins, native integrations, server events, backend and platform imports.
+2. Compare event names, trigger conditions, event_id, transaction_id, order_id, value, currency and timestamps.
+3. Run a timeline check from user action to browser event, server event, GA4 event and ad platform event.
+4. Compare counts across systems for the same time window and segment by event source where possible.
+5. Classify each duplicate risk as confirmed, probable, possible or unproven and state the safest next debug step.
 
 ## Decision rules
 
@@ -41,9 +40,9 @@ Do not use this skill for a generic brainstorming request. Use it when there is 
 
 ## Output format
 
-| Finding | Evidence | Why it matters | Recommended action | Confidence |
+| Finding | Tracking evidence | Signal risk | Recommended fix or check | Confidence |
 |---|---|---|---|---|
-| Short diagnostic claim | Data, quote, screenshot, export or missing-data note | Business impact or risk | Specific next step and owner | High / Medium / Low |
+| Specific diagnostic claim | Data, screenshot, report, note or missing-data marker | Business or signal consequence | Smallest useful next step and owner | High / Medium / Low |
 
 End with:
 

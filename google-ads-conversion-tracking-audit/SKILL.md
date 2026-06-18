@@ -25,12 +25,11 @@ Do not use this skill for a generic brainstorming request. Use it when there is 
 
 ## Analysis workflow
 
-1. Inventory each conversion action, source, status, primary/secondary setting and include-in-conversions role.
-2. Check value source, attribution model, lookback window, enhanced conversions and offline import logic.
-3. Compare counts against GA4, CRM and backend for the same time window.
-4. Flag duplicates, missing values, wrong optimization events, consent impact and low-confidence signals.
-5. Score confidence as high, medium or low based on data quality, sample size and source reliability.
-6. Produce the smallest useful next action, not a broad redesign or system rebuild.
+1. Inventory each Google Ads conversion action by source, status, primary/secondary role and include-in-conversions setting.
+2. Check counting method, value source, attribution model, lookback window, enhanced conversions and offline import logic.
+3. Compare Google Ads counts with GA4, CRM, backend and GTM debug traces for the same time window.
+4. Flag duplicate actions, wrong optimization events, missing values, import lag, consent impact and low-confidence signals.
+5. Return bidding readiness: safe to optimize, fix first, monitor, or ask for more data.
 
 ## Decision rules
 
@@ -41,9 +40,9 @@ Do not use this skill for a generic brainstorming request. Use it when there is 
 
 ## Output format
 
-| Finding | Evidence | Why it matters | Recommended action | Confidence |
+| Finding | Tracking evidence | Signal risk | Recommended fix or check | Confidence |
 |---|---|---|---|---|
-| Short diagnostic claim | Data, quote, screenshot, export or missing-data note | Business impact or risk | Specific next step and owner | High / Medium / Low |
+| Specific diagnostic claim | Data, screenshot, report, note or missing-data marker | Business or signal consequence | Smallest useful next step and owner | High / Medium / Low |
 
 End with:
 

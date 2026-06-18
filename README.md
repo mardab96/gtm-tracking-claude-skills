@@ -75,6 +75,16 @@ These skills are designed for diagnosis and approval-ready recommendations. By d
 
 Use them to structure the work, not to hand over control of the account.
 
+## Validate the pack
+
+Run the validator before publishing changes:
+
+```bash
+python3 scripts/validate-skills.py
+```
+
+It checks for placeholder text, missing required sections, weak activation descriptions and workflows that are too short to be useful.
+
 ## License and attribution
 
 Free to use, modify, and redistribute for personal and commercial work. If you ship something built on top of these skills, a credit is appreciated but not required.
