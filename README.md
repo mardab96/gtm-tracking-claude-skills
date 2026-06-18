@@ -45,6 +45,16 @@ The skills are plain Markdown with YAML frontmatter and work anywhere Claude can
 
 Once installed, describe what you want in natural language. Skills self-trigger on the patterns documented in their `## Use this skill when` section.
 
+## Activation and trigger reliability
+
+Claude Skills usually activate from the YAML `description` field first, then use the full `SKILL.md` instructions after activation. Each skill in this pack now names the moment it should be used in both places:
+
+- `description` explains the tracking situation that should trigger the skill.
+- `## Use this skill when` lists concrete request patterns and decision moments.
+- `## Required input` tells the user what exports, screenshots, traces and reports make the skill reliable.
+
+For best results, ask for the job and include the tracking object being diagnosed. Example: "Audit Google Ads conversion tracking before we scale" will trigger `google-ads-conversion-tracking-audit` more reliably than "Check tracking."
+
 ## Bring your data
 
 Every skill is data-first. They work best when you provide actual exports, reports, screenshots or notes. Each `SKILL.md` documents exactly which inputs it expects under `## Required input`.
