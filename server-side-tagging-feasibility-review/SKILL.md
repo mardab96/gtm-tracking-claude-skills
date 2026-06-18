@@ -1,6 +1,6 @@
 ---
 name: server-side-tagging-feasibility-review
-description: Evaluates whether sGTM is worth it and what needs to move first. Use when the user is diagnosing, planning, reviewing or deciding next actions for server side tagging feasibility review in GTM, GA4 and paid ads tracking.
+description: Evaluates whether sGTM is worth it and what needs to move first. Use when GTM, GA4, Google Ads, Meta, consent, click ID or CRM import data must be checked before trusting reporting or changing bidding.
 ---
 
 # Server Side Tagging Feasibility Review
@@ -9,11 +9,11 @@ Use the shared quality bar in `../references/output-standard.md` and `../referen
 
 ## Use this skill when
 
-- the user asks for help with server side tagging feasibility review in GTM, GA4 and paid ads tracking.
-- the user provides data, screenshots, exports, notes or a URL related to server side tagging feasibility review.
-- the user needs an approval-ready diagnosis before changing campaigns, pages, tracking, CRM or follow-up.
+- the user shares GTM, GA4, Google Ads, Meta Pixel/CAPI, consent, click ID, data layer or CRM import evidence tied to server side tagging feasibility review.
+- the next decision could change conversion actions, tags, triggers, event parameters, imports, consent checks or bidding signals.
+- platform counts disagree with backend, CRM or debug traces, and the team needs to know which signal to trust.
 
-Do not use this skill for a generic brainstorming request. Use it when there is a concrete asset, setup, report, page, funnel, tracking issue or decision to diagnose.
+Do not use this skill for broad analytics theory. Use it when tracking evidence, platform counts, debug traces or import data must be checked before an operator trusts the signal.
 
 ## Required input
 
@@ -52,9 +52,9 @@ End with:
 
 ## Practical example
 
-User: "Can you check this server side tagging feasibility review before we make a change?"
+User: "Here are GTM screenshots, platform counts and debug traces for server side tagging feasibility review. Is this signal safe to trust?"
 
-Assistant should: ask for or use the relevant exports/screenshots/notes, run the workflow above, produce a ranked diagnostic table, and stop at approval-ready recommendations.
+Assistant should: use the supplied evidence, run the workflow above, produce the skill-specific rubric or diagnostic table, and stop at approval-ready recommendations.
 
 ## Guardrails
 

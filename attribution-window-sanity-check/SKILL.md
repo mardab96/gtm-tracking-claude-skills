@@ -1,6 +1,6 @@
 ---
 name: attribution-window-sanity-check
-description: Checks if attribution settings match your sales cycle and reporting needs. Use when the user is diagnosing, planning, reviewing or deciding next actions for attribution window sanity check in GTM, GA4 and paid ads tracking.
+description: Checks if attribution settings match your sales cycle and reporting needs. Use when GTM, GA4, Google Ads, Meta, consent, click ID or CRM import data must be checked before trusting reporting or changing bidding.
 ---
 
 # Attribution Window Sanity Check
@@ -9,11 +9,11 @@ Use the shared quality bar in `../references/output-standard.md` and `../referen
 
 ## Use this skill when
 
-- the user asks for help with attribution window sanity check in GTM, GA4 and paid ads tracking.
-- the user provides data, screenshots, exports, notes or a URL related to attribution window sanity check.
-- the user needs an approval-ready diagnosis before changing campaigns, pages, tracking, CRM or follow-up.
+- the user shares GTM, GA4, Google Ads, Meta Pixel/CAPI, consent, click ID, data layer or CRM import evidence tied to attribution window sanity check.
+- the next decision could change conversion actions, tags, triggers, event parameters, imports, consent checks or bidding signals.
+- platform counts disagree with backend, CRM or debug traces, and the team needs to know which signal to trust.
 
-Do not use this skill for a generic brainstorming request. Use it when there is a concrete asset, setup, report, page, funnel, tracking issue or decision to diagnose.
+Do not use this skill for broad analytics theory. Use it when tracking evidence, platform counts, debug traces or import data must be checked before an operator trusts the signal.
 
 ## Required input
 
@@ -52,9 +52,9 @@ End with:
 
 ## Practical example
 
-User: "Can you check this attribution window sanity check before we make a change?"
+User: "Here are GTM screenshots, platform counts and debug traces for attribution window sanity check. Is this signal safe to trust?"
 
-Assistant should: ask for or use the relevant exports/screenshots/notes, run the workflow above, produce a ranked diagnostic table, and stop at approval-ready recommendations.
+Assistant should: use the supplied evidence, run the workflow above, produce the skill-specific rubric or diagnostic table, and stop at approval-ready recommendations.
 
 ## Guardrails
 

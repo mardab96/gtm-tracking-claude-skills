@@ -1,6 +1,6 @@
 ---
 name: google-ads-conversion-tracking-audit
-description: Audits Google Ads conversion tracking setup: primary vs secondary actions, values, attribution, enhanced conversions, imports, duplicates and bidding signal quality. Use when checking tracking before scaling, after tracking changes or when Google Ads results look suspicious.
+description: Audits Google Ads conversion tracking setup: primary vs secondary actions, values, attribution, enhanced conversions, imports, duplicates and bidding signal quality. Use when GTM, GA4, Google Ads, Meta, consent, click ID or CRM import data must be checked before trusting reporting or changing bidding.
 ---
 
 # Google Ads Conversion Tracking Audit
@@ -9,11 +9,11 @@ Use the shared quality bar in `../references/output-standard.md` and `../referen
 
 ## Use this skill when
 
-- the user is checking Google Ads conversion actions before scaling or bidding changes.
-- Google Ads conversions disagree with GA4, CRM, backend or platform reports.
-- conversion actions, values, attribution, enhanced conversions or offline imports may be misconfigured.
+- the user shares GTM, GA4, Google Ads, Meta Pixel/CAPI, consent, click ID, data layer or CRM import evidence tied to google ads conversion tracking audit.
+- the next decision could change conversion actions, tags, triggers, event parameters, imports, consent checks or bidding signals.
+- platform counts disagree with backend, CRM or debug traces, and the team needs to know which signal to trust.
 
-Do not use this skill for a generic brainstorming request. Use it when there is a concrete asset, setup, report, page, funnel, tracking issue or decision to diagnose.
+Do not use this skill for broad analytics theory. Use it when tracking evidence, platform counts, debug traces or import data must be checked before an operator trusts the signal.
 
 ## Required input
 
@@ -30,6 +30,20 @@ Do not use this skill for a generic brainstorming request. Use it when there is 
 3. Compare Google Ads counts with GA4, CRM, backend and GTM debug traces for the same time window.
 4. Flag duplicate actions, wrong optimization events, missing values, import lag, consent impact and low-confidence signals.
 5. Return bidding readiness: safe to optimize, fix first, monitor, or ask for more data.
+
+## Diagnostic rubric
+
+Use this table when the user provides conversion action or tracking evidence:
+
+| Conversion action | Source | Primary/Secondary | Count method | Value | EC/import status | Bidding risk |
+|---|---|---|---|---|---|---|
+| Action name | Website / GA4 / import / call / app | Current role | One / every / unknown | Static / dynamic / missing | Enhanced Conversions, import lag, match rate or missing-data marker | Safe / monitor / fix first / do not use for bidding |
+
+Then call out:
+
+- Optimization event: which action should drive bidding right now.
+- Reporting mismatch: where Google Ads, GA4, CRM or backend disagree.
+- Readiness gate: what must be fixed before budget or bidding changes.
 
 ## Decision rules
 
@@ -52,9 +66,9 @@ End with:
 
 ## Practical example
 
-User: "Can you check this google ads conversion tracking audit before we make a change?"
+User: "Here are GTM screenshots, platform counts and debug traces for google ads conversion tracking audit. Is this signal safe to trust?"
 
-Assistant should: ask for or use the relevant exports/screenshots/notes, run the workflow above, produce a ranked diagnostic table, and stop at approval-ready recommendations.
+Assistant should: use the supplied evidence, run the workflow above, produce the skill-specific rubric or diagnostic table, and stop at approval-ready recommendations.
 
 ## Guardrails
 

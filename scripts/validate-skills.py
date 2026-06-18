@@ -5,6 +5,13 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PLACEHOLDERS = ["Add the inputs", "Step one", "Step two", "Step three", "Column 1", "Column 2", "Column 3"]
+TEMPLATED_PHRASES = [
+    "diagnosing, planning, reviewing",
+    "asks for help with",
+    "provides data, screenshots",
+    "needs an approval-ready diagnosis",
+    "Can you check this",
+]
 REQUIRED_SECTIONS = [
     "## Use this skill when",
     "## Required input",
@@ -29,6 +36,9 @@ def main():
         for token in PLACEHOLDERS:
             if token in text:
                 errors.append(f"{rel}: placeholder token: {token}")
+        for phrase in TEMPLATED_PHRASES:
+            if phrase in text:
+                errors.append(f"{rel}: templated phrase: {phrase}")
         for heading in REQUIRED_SECTIONS:
             if heading not in text:
                 errors.append(f"{rel}: missing section: {heading}")
