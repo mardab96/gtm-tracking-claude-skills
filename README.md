@@ -85,6 +85,15 @@ python3 scripts/validate-skills.py
 
 It checks for placeholder text, missing required sections, weak activation descriptions and workflows that are too short to be useful.
 
+## Examples and review
+
+Use the sample outputs to judge the expected depth of analysis:
+
+- [`examples/google-ads-conversion-tracking-audit-sample.md`](examples/google-ads-conversion-tracking-audit-sample.md)
+- [`examples/duplicate-event-finder-sample.md`](examples/duplicate-event-finder-sample.md)
+
+Use [`evals/review-checklist.md`](evals/review-checklist.md) for the next manual review pass.
+
 ## License and attribution
 
 Free to use, modify, and redistribute for personal and commercial work. If you ship something built on top of these skills, a credit is appreciated but not required.
