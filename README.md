@@ -34,7 +34,10 @@ Each skill is a self-contained `SKILL.md` with explicit triggers, required input
 
 ```bash
 git clone https://github.com/mardab96/gtm-tracking-claude-skills.git
-cp -r gtm-tracking-claude-skills/* ~/.claude/skills/
+mkdir -p ~/.claude/skills
+cp -r gtm-tracking-claude-skills/*-* \
+      gtm-tracking-claude-skills/references \
+      ~/.claude/skills/
 ```
 
 ### Option B — Other Claude environments
