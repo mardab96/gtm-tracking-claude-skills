@@ -25,11 +25,13 @@ Do not use this skill for broad analytics theory. Use it when tracking evidence,
 
 ## Analysis workflow
 
-1. Identify which platforms need deduplication and which key they use: event_id, transaction_id, order_id or click ID.
-2. Check whether browser and server events share the same deduplication key and timing window.
+1. Identify each platform, conversion action or destination, and sending path. Check its current documented duplicate-suppression fields, scope and timing window; do not assume event_id, transaction_id or order_id are interchangeable. Distinguish click IDs used for attribution matching from identifiers for the business event: one click may lead to several valid conversions.
+2. For browser/server pairs, retries and parallel integrations, trace the same business event through the provider's actual deduplication contract. Verify required identifiers and event/action context are stable across retries and paired paths, while distinct purchases or lead stages remain distinct. Sharing an ID alone does not prove deduplication across different actions or destinations.
 3. Compare deduplication diagnostics, duplicate warnings and event count differences.
 4. Flag mismatched IDs, regenerated IDs, delayed server events and parallel integrations.
 5. Recommend deduplication fixes only after a reproducible debug trace.
+
+For example, Google's [offline conversion guide](https://developers.google.com/google-ads/api/docs/conversions/upload-offline) separates click matching identifiers from the optional order_id/transaction ID. Consult the current guide for the specific ingestion mechanism rather than copying one platform's key or window to another. If documentation or diagnostics are unavailable, mark duplicate suppression as unverified.
 
 ## Decision rules
 
